@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rules</title>
+    <title>Casino Game</title>
+    <!-- Link to the Tailwind CSS output file -->
     <link rel="stylesheet" href="./src/output.css">
     <script type="module" src="./src/main.ts"></script>
 </head>
-<body>
-    <div class="mt-10 text-3xl font-bold underline">
-        Hello world!
+<body class="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen flex items-center justify-center">
+
+    <!-- Main container for the homepage -->
+    <div class="text-center bg-white p-10 rounded-lg shadow-lg max-w-xl w-full">
+
+        <!-- Heading for the homepage -->
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-6">
+            Welcome to the Casino Game!
+        </h1>
+
+        <!-- A brief description -->
+        <p class="text-lg text-gray-600 mb-6">
+            Are you ready to try your luck? Hit the button below to start your game and see if you can win big!
+        </p>
+
+        <!-- Start Game Button -->
+        <a href="./game.html">
+            <button class="bg-green-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-green-800 transition-colors duration-300">
+                Start Game
+            </button>
+        </a>
+
     </div>
 
-    <a href="./public/game.html">
-        click me!
-    </a>
 </body>
 </html>
