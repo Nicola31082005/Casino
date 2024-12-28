@@ -12,12 +12,18 @@ const resultTitle = document.getElementById("result-title");
 const resultDescription = document.getElementById("result-description");
 const closeModal = document.getElementById("close-modal");
 
+let isMoving: boolean = false;
+
+
 function updateBalance(change: number) {
     coinBalance += change;
     balanceElement!.textContent = coinBalance.toString();
 }
 
 function spinReelsWithGSAP(): Promise<string[]> {
+    
+    isMoving = true
+    
     const reels = document.querySelectorAll<HTMLElement>(".reel");
     const result = Array.from({ length: reelCount }, () =>
         symbols[Math.floor(Math.random() * symbols.length)]
@@ -60,12 +66,14 @@ document.getElementById("spin-button")?.addEventListener("click", async () => {
         return;
     }
 
+    if (isMoving) return
+
     updateBalance(-10); // Deduct 10 coins per spin
     messageElement!.textContent = "Spinning...";
     
     // Spin reels and wait for result
     const result = await spinReelsWithGSAP();
-    console.log(result);
+    
 
     // Check result and show appropriate modal
     if (checkWin(result)) {
@@ -79,6 +87,7 @@ document.getElementById("spin-button")?.addEventListener("click", async () => {
 
 function showModal(title: string, description: string) {
     messageElement!.textContent = "Press the Spin button to try your luck!"
+    isMoving = false 
     
     resultTitle!.textContent = title;
     resultDescription!.textContent = description;
