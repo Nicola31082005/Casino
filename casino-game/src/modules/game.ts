@@ -22,6 +22,7 @@ const resultModal = document.getElementById("result-modal");
 const resultTitle = document.getElementById("result-title");
 const resultDescription = document.getElementById("result-description");
 const closeModal = document.getElementById("close-modal");
+const addCoinsButton = document.querySelector<HTMLButtonElement>("#gather-coins-button")
 
 let isMoving: boolean = false;
 
@@ -121,3 +122,11 @@ closeModal?.addEventListener("click", () => {
         },
     });
 });
+
+addCoinsButton?.addEventListener("click", () => {
+    let dialog = window.confirm("Do you want to add coins in your budget?")
+    
+    if (!dialog) return
+
+    updateBalance(50)
+})

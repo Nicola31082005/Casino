@@ -7,6 +7,7 @@
     <script type="module" src="../src/modules/game.ts"></script>
     <link rel="stylesheet" href="../src/output.css">
 </head>
+
 <body class="bg-gradient-to-b from-gray-700 to-gray-900 min-h-screen flex flex-col">
 
     <!-- Fixed Navigation Bar -->
@@ -29,6 +30,14 @@
         <div id="game-header" class="text-center mb-6">
             <h2 class="text-3xl font-extrabold">Coins: <span id="balance" class="text-green-500">0</span></h2>
             <p id="game-message" class="mt-2 text-gray-300">Press the Spin button to try your luck!</p>
+        </div>
+
+        <!-- Gather Coins Section -->
+        <div id="gather-coins" class="text-center mb-6">
+            <button id="gather-coins-button" class="bg-yellow-500 text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all duration-300 shadow-lg hover:scale-105">
+                Gather Coins
+            </button>
+            <p class="mt-2 text-gray-300">Click to add more coins to your balance!</p>
         </div>
     
         <!-- Slot Reels -->
@@ -62,5 +71,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
