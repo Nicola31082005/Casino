@@ -7,13 +7,14 @@
     <script type="module" src="../src/modules/game.ts"></script>
     <link rel="stylesheet" href="../src/output.css">
 </head>
-<body class="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen flex flex-col">
-
+<body class="bg-gradient-to-r from-orange-400 via-red-400 to-purple-500 min-h-screen flex flex-col">
 
     <!-- Fixed Navigation Bar -->
     <nav class="bg-gray-800 text-white py-4 fixed w-full top-0 left-0 z-10">
-        <div class="mx-auto px-6 flex justify-between items-center max-w-6xl">
-            <a href="./index.html" class="text-xl font-bold hover:text-gray-400 transition-colors duration-300">Casino Game</a>
+        <div class="mx-auto px-6 flex justify-between items-center">
+            <!-- Left side: Home Link -->
+            <a href="./index.html" class="text-xl font-bold">Home</a>
+            <!-- Right side: Nav Links (Rules, Game) -->
             <div class="flex space-x-6">
                 <a href="./rules.html" class="text-lg font-medium hover:text-gray-400 transition-colors duration-300">Rules</a>
                 <a href="./game.html" class="text-lg font-medium hover:text-gray-400 transition-colors duration-300">Game</a>
@@ -22,7 +23,7 @@
     </nav>
 
     <!-- Slot Machine Section -->
-    <div id="slot-machine" class="mx-auto bg-gray-800 text-white p-5 rounded-lg  mt-24">
+    <div id="slot-machine" class="mx-auto bg-gray-800 text-white p-5 rounded-lg mt-24">
         
         <!-- Coin Balance and Messages -->
         <div id="game-header" class="text-center mb-6">
@@ -52,9 +53,9 @@
 
         <!-- Dynamic Win or Lose Modal -->
         <div id="result-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
-            <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg text-center max-w-sm w-full">
-                <h2 id="result-title" class="text-2xl font-bold"></h2>
-                <p id="result-description" class="mt-4"></p>
+            <div class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white p-8 rounded-lg shadow-lg text-center max-w-sm w-full">
+                <h2 id="result-title" class="text-3xl font-extrabold">Congratulations!</h2>
+                <p id="result-description" class="mt-4 text-lg">You just hit the jackpot! Keep the streak alive or play again for more excitement!</p>
                 <button id="close-modal" class="bg-blue-600 text-white px-6 py-3 mt-6 rounded-lg hover:bg-blue-800 transition-all duration-300">
                     Close
                 </button>
