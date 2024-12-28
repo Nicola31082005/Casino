@@ -7,7 +7,7 @@
     <script type="module" src="../src/modules/game.ts"></script>
     <link rel="stylesheet" href="../src/output.css">
 </head>
-<body class="bg-gradient-to-r from-orange-400 via-red-400 to-purple-500 min-h-screen flex flex-col">
+<body class="bg-gradient-to-b from-gray-700 to-gray-900 min-h-screen flex flex-col">
 
     <!-- Fixed Navigation Bar -->
     <nav class="bg-gray-800 text-white py-4 fixed w-full top-0 left-0 z-10">
@@ -52,8 +52,8 @@
         </div>
 
         <!-- Dynamic Win or Lose Modal -->
-        <div id="result-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
-            <div class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white p-8 rounded-lg shadow-lg text-center max-w-sm w-full">
+        <div id="result-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-500">
+            <div class="bg-gray-800 text-white p-8 rounded-lg shadow-lg text-center max-w-sm w-full">
                 <h2 id="result-title" class="text-3xl font-extrabold">Congratulations!</h2>
                 <p id="result-description" class="mt-4 text-lg">You just hit the jackpot! Keep the streak alive or play again for more excitement!</p>
                 <button id="close-modal" class="bg-blue-600 text-white px-6 py-3 mt-6 rounded-lg hover:bg-blue-800 transition-all duration-300">
