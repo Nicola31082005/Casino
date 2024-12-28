@@ -1,11 +1,22 @@
 import { gsap } from "gsap";
+import { getOrCreateUserId } from "../services/authenticationMiddleware";
+import { getUserCoins, saveUserCoins } from "../datebaseApi/indexedDB";
 
 const symbols = ["🍒", "🍋", "🍊", "🍉", "⭐", "💎"];
 const reelCount = 3; // Number of reels
 const winPatterns = [["🍒", "🍒", "🍒"], ["⭐", "⭐", "⭐"], ["💎", "💎", "💎"]];
 
-let coinBalance = 100; // Initial coin balance
-const balanceElement = document.getElementById("balance");
+
+const userId = getOrCreateUserId();
+let userCoins = await getUserCoins(userId);
+
+
+
+// implement function to store the coins in the datebase when playing
+
+
+const balanceElement = document.getElementById("balance")!;
+balanceElement.textContent = userCoins!.toString();
 const messageElement = document.getElementById("game-message");
 const resultModal = document.getElementById("result-modal");
 const resultTitle = document.getElementById("result-title");
@@ -16,8 +27,9 @@ let isMoving: boolean = false;
 
 
 function updateBalance(change: number) {
-    coinBalance += change;
-    balanceElement!.textContent = coinBalance.toString();
+    userCoins! += change;
+    balanceElement!.textContent = userCoins!.toString();
+    saveUserCoins(userId, userCoins!)
 }
 
 function spinReelsWithGSAP(): Promise<string[]> {
@@ -61,7 +73,7 @@ function checkWin(result: string[]): boolean {
 }
 
 document.getElementById("spin-button")?.addEventListener("click", async () => {
-    if (coinBalance <= 0) {
+    if (userCoins! <= 0) {
         messageElement!.textContent = "You are out of coins!";
         return;
     }
