@@ -1,11 +1,15 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: './', // The root directory for your source code (keeps it the same, pointing to the project root)
   build: {
-    outDir: 'dist', // The output directory for the build files
-    emptyOutDir: true, // Clears the 'dist' folder before each build
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        game: resolve(__dirname, 'game.html'),
+        rules: resolve(__dirname, 'rules.html'),
+      },
+    },
   },
-  publicDir: 'public', // The folder where your static files (index.html and others) are stored
-  base: '/', // Ensure your app works correctly from the root path
+  base: '/Casino/', // Ensures relative paths for build output
 });
