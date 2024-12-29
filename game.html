@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Slot Game</title>
+  <script type="module" crossorigin src="./assets/game-BBk4gyz8.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/output-Bw6ZNiap.js">
+  <link rel="modulepreload" crossorigin href="./assets/index-DjKJqAo0.js">
+  <link rel="stylesheet" crossorigin href="./assets/output-BQNm5LAC.css">
+</head>
+
+<body class="bg-gradient-to-b from-gray-700 to-gray-900 min-h-screen flex flex-col">
+
+    <!-- Fixed Navigation Bar -->
+    <nav class="bg-gray-800 text-white py-4 fixed w-full top-0 left-0 z-10">
+        <div class="mx-auto px-6 flex justify-between items-center">
+            <!-- Left side: Home Link -->
+            <a href="./index.html" class="text-xl font-bold">Home</a>
+            <!-- Right side: Nav Links (Rules, Game) -->
+            <div class="flex space-x-6">
+                <a href="./rules.html" class="text-lg font-medium hover:text-gray-400 transition-colors duration-300">Rules</a>
+                <a href="./game.html" class="text-lg font-medium hover:text-gray-400 transition-colors duration-300">Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slot Machine Section -->
+    <div id="slot-machine" class="mx-auto bg-gray-800 text-white p-5 rounded-lg mt-24">
+        
+        <!-- Coin Balance and Messages -->
+        <div id="game-header" class="text-center mb-6">
+            <h2 class="text-3xl font-extrabold">Coins: <span id="balance" class="text-green-500">0</span></h2>
+            <p id="game-message" class="mt-2 text-gray-300">Press the Spin button to try your luck!</p>
+        </div>
+
+        <!-- Gather Coins Section -->
+        <div id="gather-coins" class="text-center mb-6">
+            <button id="gather-coins-button" class="bg-yellow-500 text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all duration-300 shadow-lg hover:scale-105">
+                Gather Coins
+            </button>
+            <p class="mt-2 text-gray-300">Click to add more coins to your balance!</p>
+        </div>
+    
+        <!-- Slot Reels -->
+        <div id="reels" class="grid grid-cols-3 gap-4 justify-center items-center bg-gray-900 p-6 rounded-lg shadow-inner">
+            <div class="reel bg-gray-700 h-32 w-24 flex items-center justify-center text-5xl font-bold rounded-lg border-4 border-gray-500">
+                🍒
+            </div>
+            <div class="reel bg-gray-700 h-32 w-24 flex items-center justify-center text-5xl font-bold rounded-lg border-4 border-gray-500">
+                🍋
+            </div>
+            <div class="reel bg-gray-700 h-32 w-24 flex items-center justify-center text-5xl font-bold rounded-lg border-4 border-gray-500">
+                🍊
+            </div>
+        </div>
+    
+        <!-- Spin Button -->
+        <div class="text-center mt-8">
+            <button id="spin-button" class="bg-green-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-green-800 transition-all duration-300 shadow-lg hover:scale-105">
+                Spin
+            </button>
+        </div>
+
+        <!-- Dynamic Win or Lose Modal -->
+        <div id="result-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-500">
+            <div class="bg-gray-800 text-white p-8 rounded-lg shadow-lg text-center max-w-sm w-full">
+                <h2 id="result-title" class="text-3xl font-extrabold">Congratulations!</h2>
+                <p id="result-description" class="mt-4 text-lg">You just hit the jackpot! Keep the streak alive or play again for more excitement!</p>
+                <button id="close-modal" class="bg-blue-600 text-white px-6 py-3 mt-6 rounded-lg hover:bg-blue-800 transition-all duration-300">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
